@@ -110,31 +110,39 @@ export default function MemoryMatchingGame() {
   return (
     <div
       style={{
-        minHeight: "100vh",
+        height: "100vh",
+        width: "100vw",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         background: "#f6f5f3",
         fontFamily:
           "'Söhne', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-        padding: "24px",
+        padding: "16px",
+        boxSizing: "border-box",
+        overflow: "hidden",
       }}
     >
       <div
         style={{
           width: "100%",
           maxWidth: "620px",
+          height: "100%",
+          maxHeight: "820px",
           background: "#ffffff",
           borderRadius: "4px",
           border: "1px solid #e5e3df",
           boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+          display: "flex",
+          flexDirection: "column",
         }}
         onClick={handleBoardClick}
       >
         <div
           style={{
-            padding: "24px 24px 8px",
+            padding: "20px 24px 4px",
             textAlign: "center",
+            flexShrink: 0,
           }}
         >
           <h1
@@ -152,10 +160,13 @@ export default function MemoryMatchingGame() {
 
         <div
           style={{
+            flex: 1,
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
-            gap: "40px 32px",
-            padding: "24px 40px 32px",
+            gridTemplateRows: "repeat(5, 1fr)",
+            gap: "3% 14%",
+            padding: "20px 32px",
+            minHeight: 0,
           }}
         >
           {cards.map((card) => (
@@ -166,12 +177,13 @@ export default function MemoryMatchingGame() {
         <div
           style={{
             borderTop: "1px solid #eeece7",
-            padding: "16px 32px",
+            padding: "14px 32px",
             display: "flex",
             alignItems: "center",
             gap: "32px",
             fontSize: "15px",
             color: "#8a8578",
+            flexShrink: 0,
           }}
         >
           <span>Match: {match}</span>
@@ -219,7 +231,7 @@ function Card({ card, onClick }) {
       }}
       style={{
         width: "100%",
-        aspectRatio: "3 / 4",
+        height: "100%",
         border: card.isMatched
           ? "1px solid #b9ddc7"
           : revealed
