@@ -113,12 +113,9 @@ export default function MemoryMatchingGame() {
         height: "100vh",
         width: "100vw",
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "#f6f5f3",
+        background: "#ffffff",
         fontFamily:
           "'Söhne', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-        padding: "16px",
         boxSizing: "border-box",
         overflow: "hidden",
       }}
@@ -126,13 +123,8 @@ export default function MemoryMatchingGame() {
       <div
         style={{
           width: "100%",
-          maxWidth: "620px",
           height: "100%",
-          maxHeight: "820px",
           background: "#ffffff",
-          borderRadius: "4px",
-          border: "1px solid #e5e3df",
-          boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
           display: "flex",
           flexDirection: "column",
         }}
@@ -140,7 +132,7 @@ export default function MemoryMatchingGame() {
       >
         <div
           style={{
-            padding: "20px 24px 4px",
+            padding: "24px 24px 4px",
             textAlign: "center",
             flexShrink: 0,
           }}
@@ -148,7 +140,7 @@ export default function MemoryMatchingGame() {
           <h1
             style={{
               margin: 0,
-              fontSize: "18px",
+              fontSize: "20px",
               fontWeight: 500,
               color: "#8a8578",
               letterSpacing: "0.02em",
@@ -164,8 +156,8 @@ export default function MemoryMatchingGame() {
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
             gridTemplateRows: "repeat(5, 1fr)",
-            gap: "3% 14%",
-            padding: "20px 32px",
+            gap: "3% 20%",
+            padding: "24px 10%",
             minHeight: 0,
           }}
         >
@@ -173,6 +165,7 @@ export default function MemoryMatchingGame() {
             <Card key={card.id} card={card} onClick={() => handleCardClick(card)} />
           ))}
         </div>
+
 
         <div
           style={{
